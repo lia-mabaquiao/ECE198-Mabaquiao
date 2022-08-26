@@ -20,4 +20,3 @@ end
 u(count, 1) = v(count - 1, 2) + 1;
 u(count, 2) = max;
 
-%     disp(sprintf('first=%d last=%d',first,last));

@@ -9,7 +9,7 @@ global data;
 % split voiced / unvoiced segments
 [u, v] = UVSplit(p);
 
-%  pitch marking for voiced segments
+% pitch marking for voiced segments
 pm = [];
 ca = [];
 first = 1;

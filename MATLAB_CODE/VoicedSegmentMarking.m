@@ -1,6 +1,6 @@
 function [Marks, Candidates] = VoicedSegmentMarking(x, p, fs)
 % =========================================================================
-% Find pitch mark candidates in voice segment
+% Find pitch mark candidates in voiced segment
 % =========================================================================
 
 MaxCandidateNumber = 3;

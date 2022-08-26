@@ -8,9 +8,9 @@ function pitch = PitchDetection(x, fs)
 MinLag = round( fs / 1500);
 MaxLag = round( fs / 70);
 
-cc = CenterClipping(x, 0.3); 								% Center Cliping for pre-processing
+cc = CenterClipping(x, 0.3); 					% Center Cliping for pre-processing
 AutoCorr = xcorr(cc, MaxLag, 'coeff'); 			% normalized ACF (AutoCorrelation Function)
-AutoCorr = AutoCorr(MaxLag + 1 : 2*MaxLag); %take half of ACF
+AutoCorr = AutoCorr(MaxLag + 1 : 2*MaxLag);     %take half of ACF
 
 
 [MaxValue, MaxIndex] = max(AutoCorr(MinLag : MaxLag)); %search max value of ACF in search region
@@ -28,7 +28,6 @@ if MaxValue > 0.35 && MinValue < 0 && IsPeak(MaxIndex, MinLag, MaxLag, AutoCorr)
     else pitch = 0;
 end
 
-% DisplayInfor;
 
     function v = IsPeak(i, min, max, x)
         

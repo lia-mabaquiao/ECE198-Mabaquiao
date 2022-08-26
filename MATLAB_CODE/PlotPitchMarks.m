@@ -1,7 +1,7 @@
 %--------------------------------------------------------------------------
 % Plot pitch marks found by pitch marking algorithm
 %--------------------------------------------------------------------------
-function PlotPitchMarks(s, ca, pm, p);
+function PlotPitchMarks(s, ca, pm, p)
 
 % normalization s and d
 s=max(p)/max(s)*s;

@@ -64,7 +64,6 @@ for i = 2 : length(anaPm) - 1
     disp(size(unit(i).wave))
     N = length(unit(i).wave);
     M = 2^nextpow2(2*N-1);
-%     M = round(1.1*N/pitchScale);
     unit(i).dft = fft(unit(i).wave, M);
 end
 

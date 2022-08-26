@@ -1,7 +1,7 @@
 clear all;
 clc;
 
-fileIn = ['/Users/liamabaquiao/Documents/THESIS/DATASET_VOCALS_10_12_SEC/lib-fem1.wav'];
+fileIn = ['<filepath>'];
 [WaveIn, fs] = audioread(fileIn); %read input signal from file	
 
 global config;
@@ -62,8 +62,9 @@ end
 
 waveOut=waveOut';
 out = [waveOut; zeros(length(WaveIn)-length(waveOut),1)];
+harmonized = out + WaveIn;
 
-audiowrite('FOR_ATE.wav',out+WaveIn,fs);
-%audiowrite('3DOWN_MAJ_wonderwall_fem2.wav',out,fs);
-%audiowrite('5UP_wonderwall_fem2.wav',out,fs);
-%audiowrite('5DOWN_wonderwall_fem2.wav',out,fs);
+
+%to output only the shifted vocal signal, save the "out" variable
+%to output the harmonized vocal signal, save the "harmonized" variable.
+audiowrite('<filepath>', harmonized, fs);

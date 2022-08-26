@@ -6,7 +6,7 @@ global config;
 
 % Init parameters
 WindowLength = round(fs * 0.030); %number of sample in 30 ms
-Overlap = round(fs * 0.010); %number of sample in 10 ms
+Overlap = round(fs * 0.010);      %number of sample in 10 ms
 WaveLength = length(x);
 NumberOfFrames = floor((WaveLength - WindowLength) / Overlap) + 2;
 FramePitch = zeros(NumberOfFrames + 2, 1);
@@ -68,7 +68,7 @@ FramePitch1 = medfilt1(FramePitch, 5);
 FramePitch2 = zeros(size(FramePitch1));
 %Limiting Pitch Input for better filtering
 for i = 2:length(FramePitch1)
-    if FramePitch1(i)>650
+    if FramePitch1(i)>650 %650 is an arbitrary number, set as the max pitch
         FramePitch2(i)=0;
     else
         FramePitch2(i)=FramePitch1(i);
